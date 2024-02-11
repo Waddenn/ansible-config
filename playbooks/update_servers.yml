@@ -1,10 +1,10 @@
 ---
-- name: Mise à jour des serveurs Debian
+- name: Mise a jour des serveurs Debian
   hosts: servers
-  become: yes
+  become: false
 
   tasks:
-    - name: Mise à jour du système
+    - name: Mise a jour du systeme
       apt:
         update_cache: yes
         upgrade: yes
