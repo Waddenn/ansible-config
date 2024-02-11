@@ -1,0 +1,2 @@
+ ansible-playbook -i inventory/hosts playbooks/update_servers.yml
+ ansible-playbook -i inventory/hosts playbooks/docker_update.yml
