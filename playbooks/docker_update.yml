@@ -1,24 +1,25 @@
 ---
-- name: Mise à jour des conteneurs avec Docker Compose
+- name: Update containers with Docker Compose
   hosts: servers_test
   become: false 
 
   tasks:
-    - name: Récupérer les images les plus récentes avec docker-compose pull
-      command: "docker-compose pull"
+    - name: Get the latest images with docker-compose pull
+      command: "docker compose pull"
       args:
         chdir: "/home/wade/docker_volumes"
       tags:
         - docker_compose
 
-    - name: Mise à jour des conteneurs avec docker-compose up -d
-      command: "docker-compose up -d"
+    - name: Update containers with docker-compose up -d
+      command: "docker compose up -d"
       args:
         chdir: "/home/wade/docker_volumes"
       tags:
         - docker_compose
 
-    - name: Supprimer les images non utilisées avec docker image prune
+    - name: Remove unused images with docker image prune
       command: "docker image prune -f"
       tags:
         - docker_compose
+
