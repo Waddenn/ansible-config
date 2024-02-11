@@ -1,0 +1,16 @@
+[servers_test]
+192.168.1.162 ansible_ssh_user=root
+[servers]
+192.168.1.202 ansible_ssh_user=root 
+192.168.1.203 ansible_ssh_user=root 
+192.168.1.204 ansible_ssh_user=root 
+192.168.1.205 ansible_ssh_user=root 
+192.168.1.206 ansible_ssh_user=root 
+192.168.1.207 ansible_ssh_user=root 
+192.168.1.208 ansible_ssh_user=root 
+192.168.1.209 ansible_ssh_user=root 
+[servers_docker_compose]
+192.168.1.204 ansible_ssh_user=root 
+192.168.1.206 ansible_ssh_user=root 
+192.168.1.207 ansible_ssh_user=root 
+192.168.1.208 ansible_ssh_user=root 
