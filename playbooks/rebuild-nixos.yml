@@ -4,7 +4,15 @@
   become: true
   vars:
     nixos_config_dir: /home/nixos/nixos-config
+    nixos_repo: "https://github.com/Waddenn/nixos-config.git"
   tasks:
+    - name: Update NixOS configuration from Git repository
+      git:
+        repo: "{{ nixos_repo }}"
+        dest: "{{ nixos_config_dir }}"
+        update: yes
+        force: yes
+
     - name: Rebuild NixOS using flake (hostname={{ inventory_hostname }})
       command: "nixos-rebuild switch --flake .#{{ inventory_hostname }}"
       args:
