@@ -1,0 +1,11 @@
+---
+- name: Rebuild NixOS configuration on all machines
+  hosts: nixos
+  become: true
+  vars:
+    nixos_config_dir: /home/nixos/nixos-config
+  tasks:
+    - name: Rebuild NixOS using flake (hostname={{ inventory_hostname }})
+      command: "nixos-rebuild switch --flake .#{{ inventory_hostname }}"
+      args:
+        chdir: "{{ nixos_config_dir }}"
