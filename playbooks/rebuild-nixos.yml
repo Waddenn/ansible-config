@@ -18,3 +18,4 @@
       args:
         chdir: "{{ nixos_config_dir }}"
       become: true  
+        
