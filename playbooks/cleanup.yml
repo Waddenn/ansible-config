@@ -1,0 +1,7 @@
+---
+- name: Run nix-collect-garbage on all NixOS machines
+  hosts: nixos
+  tasks:
+    - name: Run nix-collect-garbage to free space
+      command: "nix-collect-garbage -d"
+      become: true
