@@ -1,0 +1,7 @@
+---
+- name: Run tailscale up on all NixOS machines
+  hosts: nixos
+  tasks:
+    - name: Run tailscale up with SSH enabled
+      command: "tailscale up --ssh"
+      become: true
