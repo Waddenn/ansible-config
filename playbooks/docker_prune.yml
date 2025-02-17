@@ -1,0 +1,6 @@
+- name: Full cleanup of unused Docker resources
+  hosts: nixos
+  tasks:
+    - name: Remove unused images, containers, volumes, and networks
+      command: "docker system prune -f"
+      become: true
