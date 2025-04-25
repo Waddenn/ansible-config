@@ -1,0 +1,11 @@
+---
+- name: Git pull main branch with tags and rebase
+  hosts: nixos
+  vars:
+    repo_dir: /home/nixos/nixos-config
+  tasks:
+    - name: Pull latest changes from origin main with tags and rebase
+      command: git pull --tags --rebase origin main
+      args:
+        chdir: "{{ repo_dir }}"
+      become: false
