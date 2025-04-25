@@ -1,0 +1,15 @@
+---
+- name: Start git-auto-pull and nixos-upgrade services
+  hosts: nixos
+  tasks:
+    - name: Start git-auto-pull.service
+      become: true
+      ansible.builtin.systemd:
+        name: git-auto-pull.service
+        state: started
+
+    - name: Start nixos-upgrade.service
+      become: true
+      ansible.builtin.systemd:
+        name: nixos-upgrade.service
+        state: started

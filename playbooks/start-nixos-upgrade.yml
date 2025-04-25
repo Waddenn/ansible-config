@@ -1,9 +1,0 @@
----
-- name: Start nixos-upgrade systemd service on all machines
-  hosts: nixos
-  tasks:
-    - name: Start nixos-upgrade.service
-      become: true
-      ansible.builtin.systemd:
-        name: nixos-upgrade.service
-        state: started
